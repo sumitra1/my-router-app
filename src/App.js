@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+//configure the routes when given the path in browser which element will render will decide
+import {Routes,Route} from 'react-router-dom';
+import {Home} from './component/Home'
+import {About} from './component/About'
+import {NavBar} from './component/NavBar'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <NavBar/>
+    <Routes>
+      <Route path='/'element={<Home/>}></Route>
+      <Route path='about'element={<About/>}></Route>
+    </Routes>
+    </>
   );
 }
 
 export default App;
+
+//navigate to differnt routes using an element in ui
